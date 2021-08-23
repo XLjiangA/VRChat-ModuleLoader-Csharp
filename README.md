@@ -7,7 +7,7 @@
 
 ## 基于MelonMod开发
 
-- [MelonLoader 0.4.3](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+- [MelonLoader 0.4.3](https://github.com/LavaGang/MelonLoader)
 - [.NET Framework 4.7.2 Runtime](https://dotnet.microsoft.com/download/dotnet-framework/net472)
 
 ## 特别感谢
