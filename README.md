@@ -1,4 +1,4 @@
-﻿# VRChat-ModuleLoader-Csharp
+﻿# VRChat汉化插件加载器(Csharp)
 
 * 该项目基于 https://github.com/LavaGang/MelonLoader
 * 会检测游戏目录下是否拥有汉化插件(VRChat_Chinese.dll),否则会自动释放插件置游戏根目录
