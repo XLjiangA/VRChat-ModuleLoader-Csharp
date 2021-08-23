@@ -1,6 +1,4 @@
-﻿# VRChat-ModuleLoader-Csharp
-
-## VRChat汉化插件加载器
+﻿## VRChat汉化插件加载器
 
 * 启发于 https://www.bilibili.com/video/BV1EQ4y117tn
 * 会检测游戏目录下是否拥有汉化插件(VRChat_Chinese.dll),否则会自动释放插件置游戏根目录
