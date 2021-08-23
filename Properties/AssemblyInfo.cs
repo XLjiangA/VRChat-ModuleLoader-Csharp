@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("vrc_zh")]
+[assembly: AssemblyTitle("VRCTans")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("vrc_zh")]
+[assembly: AssemblyProduct("VRCTans")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -35,5 +35,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: MelonInfo(typeof(vrc_zh.Vrczh), "VRC.ZH_CN", "1.0.0", "Turara", null)]
+[assembly: MelonInfo(typeof(VRCTans.VRCTranslate), "VRC.Translate", "1.0.1", "Turara", null)]
 [assembly: MelonGame(null, "VRChat")]

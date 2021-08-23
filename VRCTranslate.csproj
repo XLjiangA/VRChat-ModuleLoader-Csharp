@@ -7,8 +7,8 @@
     <ProjectGuid>{5AE6F717-BE78-46EA-AFA0-62D28F31EF44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>vrc_zh</RootNamespace>
-    <AssemblyName>vrc_zh</AssemblyName>
+    <RootNamespace>VRCTans</RootNamespace>
+    <AssemblyName>VRCTanslate</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -45,10 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vrczh.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="VRChat_Chinese.dll" />
+    <Compile Include="Utility\FileManager.cs" />
+    <Compile Include="Utility\Loader.cs" />
+    <Compile Include="Utility\NativeAPI.cs" />
+    <Compile Include="VRCTranslate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
