@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using MelonLoader;
+﻿using MelonLoader;
 using System.IO;
-using System.Reflection;
+using System.Text;
 using VRCTans.Utility;
 
 namespace VRCTans
@@ -19,6 +13,7 @@ namespace VRCTans
         {
             MelonLogger.Msg("Hey human");
             var CurrentDirectory = Directory.GetCurrentDirectory();
+            //MelonLogger.Msg(CurrentDirectory);
             Loader = new FileManager(CurrentDirectory)
                 .CreateLoader();
         }
@@ -38,15 +33,15 @@ namespace VRCTans
                 catch (FileNotFoundException)
                 {
                     StringBuilder sb = new StringBuilder();
-                    sb.AppendLine("VRChat多语言插件(VRChatMultiLanguage.dll)未找到，请前往下载：");
-                    sb.AppendLine("https://github.com/extremeblackliu/VRChatMultiLanaguge/releases/tag/release");
-                    sb.AppendLine("如果你也没有语言文件(language file)，下载：");
+                    sb.AppendLine("翻译插件加载失败!");
+                    // sb.AppendLine("VRChat多语言插件(VRChatMultiLanguage.dll)未找到，请前往下载：");
+                    //  sb.AppendLine("https://github.com/extremeblackliu/VRChatMultiLanaguge/releases/tag/release");
+                    sb.AppendLine("如果你没有语言文件(language file)，下载：");
                     sb.AppendLine("https://github.com/extremeblackliu/VRChatMultiLanguage-File");
-                    sb.AppendLine("下载好两个文件后，和加载器(VRCTranslate.dll)放置在同一路径");
+                    sb.AppendLine("下载文件后，请放置在(VRchat/Mods/)路径下");
                     MelonLogger.Error(sb.ToString());
                 }
             }
         }
-
     }
 }
