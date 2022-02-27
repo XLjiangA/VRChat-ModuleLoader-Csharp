@@ -2,12 +2,15 @@
 using System.IO;
 using System.Text;
 using VRCTans.Utility;
+using UnityEngine;
+using VRCTans.Model;
 
 namespace VRCTans
 {
     class VRCTranslate : MelonMod
     {
         private static bool Initialized { get; set; }
+        private static bool Done { get; set; }
         private Loader Loader { get; set; }
         public override void OnApplicationLateStart()
         {
@@ -26,7 +29,6 @@ namespace VRCTans
                 {
                     if (Loader.LoadTranslate() > 0)
                     {
-                        MelonLogger.Msg("VRChat多语言插件加载成功!!!");
                         Initialized = true;
                     }
                 }
@@ -41,6 +43,34 @@ namespace VRCTans
                     sb.AppendLine("下载文件后，请放置在(VRchat/Mods/)路径下");
                     MelonLogger.Error(sb.ToString());
                 }
+            }
+        }
+        public override void OnUpdate()
+        {
+            if(!Done && Initialized && GameObject.Find("UserInterface/Canvas_QuickMenu(Clone)") != null)
+            {
+                var jText = File.ReadAllText(Loader.fm.JsonBase);
+                var tList = JsonFormat.Get<TransObject>(jText);
+                for (int i = 0; i < tList.Items.Length; i++)
+                {
+                    var t = tList.Items[i];
+                    var _path = t.Path;
+                    var _text = t.Text;
+                    var component = GameObject.Find(_path).GetTextComponent();
+                    if (component == null)
+                    {
+                        var component1 = GameObject.Find(_path).GetTextMeshProComponent();
+                        if (component1 == null)
+                        {
+                            continue;
+                        }
+                        component1.SetText(_text);
+                        continue;
+                    }
+                    component.SetText(_text);
+                }
+                Done = true;
+                MelonLogger.Msg("VRChat多语言插件加载成功!!!");
             }
         }
     }
