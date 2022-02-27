@@ -7,7 +7,7 @@ namespace VRCTans.Utility
 {
     class Loader
     {
-        private FileManager fm { get; set; }
+        public FileManager fm { get; set; }
         public Loader(FileManager _fm)
             => fm = _fm;
 
@@ -23,7 +23,7 @@ namespace VRCTans.Utility
             */
             if (fm.CheckIsExist_Json())
             {
-                return loadFormJson();
+                return 1;
             }
             throw new FileNotFoundException();
         }
@@ -43,9 +43,18 @@ namespace VRCTans.Utility
                 var t = tList.Items[i];
                 var _path = t.Path;
                 var _text = t.Text;
-                GameObject.Find(_path)
-                    .GetTextComponent()
-                    .SetText(_text);
+                var component = GameObject.Find(_path).GetTextComponent();
+                if (component == null)
+                {
+                    var component1 = GameObject.Find(_path).GetTextMeshProComponent();
+                    if (component1 == null)
+                    {
+                        continue;
+                    }
+                    component1.SetText(_text);
+                    continue;
+                }
+                component.SetText(_text);
             }
             return 1;
         }
